@@ -15,13 +15,17 @@ while True:
         lista.append(inserir)
         print(f'{inserir} foi adicionado no carrinho.')
     elif opção == '2':
-        apagar = input('Digite o número do item que deseja apagar: ')
-        apagar2 = int(apagar)
-        if apagar2 <= len(lista):
-            print(f'{lista[apagar2]} foi removido do carrinho.')
-            lista.pop(apagar2)
-        else:
-            print('Esse item não tem na lista.')
+        try:
+            apagar = input('Digite o número do item que deseja apagar: ')
+            apagar2 = int(apagar)
+            if apagar2 <= len(lista):
+                print(f'{lista[apagar2]} foi removido do carrinho.')
+                lista.pop(apagar2)
+            else:
+                print('Esse item não tem na lista.')
+        except:
+            print('Opção inválida')
+            continue
     elif opção == '3':
         print('Carrinho de compras:')
         for i, n in enumerate(lista):
